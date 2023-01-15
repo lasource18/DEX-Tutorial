@@ -446,7 +446,7 @@ export default function Home() {
             {/* CCOnvert the BigNumber to string using the formatEther function from ethers.js */}
             {ethSelected 
             ? `You will get ${utils.formatEther(tokenToBeReceivedAfterSwap)} Crypto Dev Tokens`
-            : `YOu will get ${utils.formatEther(tokenToBeReceivedAfterSwap)} Eth`}
+            : `You will get ${utils.formatEther(tokenToBeReceivedAfterSwap)} Eth`}
           </div>
           <button className={styles.button1} onClick={_swapTokens}>
             Swap
