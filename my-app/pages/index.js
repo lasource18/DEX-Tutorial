@@ -428,7 +428,7 @@ export default function Home() {
             className={styles.input}
             value={swapAmount}
           />
-          <select className={styles.input}
+          <select className={styles.select}
           name="dropdown"
           id="dropdown"
           onChange={async () => {
