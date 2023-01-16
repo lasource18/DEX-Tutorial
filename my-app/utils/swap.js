@@ -15,7 +15,7 @@ export const getAmountOfTokensReceivedFromSwap = async (
     provider,
     ethSelected,
     ethBalance,
-    reserveCD
+    reservedCD
 ) => {
     // Create a new instance of the exchange contract
     const exchangeContract = new Contract(
@@ -31,7 +31,7 @@ export const getAmountOfTokensReceivedFromSwap = async (
     amountOfTokens = await exchangeContract.getAmountOfTokens(
         _swapAmountWei,
         ethBalance,
-        reserveCD
+        reservedCD
     )
   } else {
     // If `Eth` is not selected this means our input value is `Crypto Dev` tokens which means our input amount would be
@@ -89,7 +89,7 @@ export const swapTokens = async (
         await tx.wait()
         // call cryptoDevTokenToEth function would take in `swapAmountWei` of `Crypto Dev` tokens and would
         // send back `tokenToBeReceivedAfterSwap` amount of `Eth` to the user
-        tx = await exchangeContract.cryptoDevTokensToEth(
+        tx = await exchangeContract.cryptoDevTokenToEth(
             swapAmountWei,
             tokenToBeReceivedAfterSwap
         )

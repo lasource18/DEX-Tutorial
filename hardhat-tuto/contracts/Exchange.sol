@@ -132,7 +132,7 @@ contract Exchange is ERC20 {
         // Notice that the `inputReserve` we are sending in equal to
         // `address(this).balance - msg.value` instead of just `address(this).balance`
         // so we need to substract it to get the actual input reserve
-        uint256 tokensBought = getAmountOfTokens(msg.value, address(this).balance, tokenReserve);
+        uint256 tokensBought = getAmountOfTokens(msg.value, address(this).balance - msg.value, tokenReserve);
 
         require(tokensBought >= _minTokens, "insufficient output amount");
         // Transfer the Crypto Dev tokens to the user
